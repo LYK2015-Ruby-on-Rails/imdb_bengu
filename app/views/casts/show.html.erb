@@ -1,0 +1,24 @@
+Poster: <%= image_tag @cast.avatar(:medium) %><br/> 
+Name: <%= @cast.name %><br/> 
+Birtday: <%= @cast.birtday %><br/>
+Bio: <%= @cast.bio %><br/>
+
+<% if can? :create, @cast %>
+<%= link_to 'Edit', edit_cast_path(@cast)  %>
+<% end %>
+<%= link_to 'Back', casts_path %>
+</br>
+
+<%= rating_for @cast, "name" %>
+
+<h2>Movies Acted</h2>
+<% @movies_acted.each do |movie| %>
+	<%= link_to movie.title, movie %>
+<br>
+<% end %>
+
+<h2>Actors</h2>
+<% @movies_directed.each do |movie| %>
+	<%= link_to movie.title, movie %>
+<br>
+<% end %> 

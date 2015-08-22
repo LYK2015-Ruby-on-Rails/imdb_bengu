@@ -1,0 +1,10 @@
+<%= link_to 'Login', new_user_session_path %>
+
+<br>
+
+<% @movies.each do |movie| %>
+	<%= link_to movie.title, movie %>
+	<br>
+<% end %>
+
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
